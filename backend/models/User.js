@@ -27,7 +27,7 @@ UserSchema.methods.validPassword = function(password) {
 }
 
 UserSchema.methods.generateToken = function() {
-    return jwt.sign({username: this.username, id: this._id}, "Hideki", {expiresIn: "1d"})
+    return jwt.sign({username: this.username, id: this._id}, "secret", {expiresIn: "1d"})
 }
 
 UserSchema.methods.toAuthJson = function() {
